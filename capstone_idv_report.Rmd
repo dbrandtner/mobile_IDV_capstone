@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, include=FALSE}
 load(".RData")
 requiredPackages <- c("tidyverse", "dplyr", "caret", "knitr", "patchwork", "kableExtra", "Hmisc", "rje")
+require_install(requiredPackages)
 lapply(requiredPackages, library, character.only = TRUE)
 ```
 
@@ -25,7 +26,7 @@ The aim of this analysis is to implement a multiclass classification model that 
 The *Mobile Price Classification* dataset in total counts 2000 rows for 21 columns. Rows correspond to observations, that is classified mobiles, and columns correspond to 20 predictors, that is the mobile tech specs (see *Table 1*), plus the outcome class to predict: this is defined as *price_range* and it is composed by "*0*", "*1*", "*2*", "*3*" classes, here listed from the cheapest to the more expensive.\
 
 | Predictor name | Explanation and unit of measure                              |
-|-------------------------|-----------------------------------------------|
+|-----------------|-------------------------------------------------------|
 | battery_power  | Total energy a battery can store in one time measured in mAh |
 | blue           | Has bluetooth or not                                         |
 | clock_speed    | Speed at which microprocessor executes instructions          |

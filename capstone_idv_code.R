@@ -4,8 +4,18 @@
 
 
 # Loading required packages
+require_install <- function(x){
+  for (i in x){
+    print(i)
+    if(!require(i, character.only = TRUE)) {
+      install.packages(i)
+    }
+  }
+}
+
 requiredPackages <- c("tidyverse", "dplyr", "caret", "knitr", "patchwork",
                       "kableExtra", "Hmisc", "rje")
+require_install(requiredPackages)
 lapply(requiredPackages, library, character.only = TRUE)
 
 ###############################################################################
